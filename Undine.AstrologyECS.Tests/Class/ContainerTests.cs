@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Undine.AstrologyECS.Tests.Components;
+using Undine.AstrologyECS.Tests.Class.Components;
 using Undine.Core.Class;
+using UndineAstrologyECS.Class;
 
-namespace Undine.AstrologyECS.Tests
+namespace Undine.AstrologyECS.Tests.Class
 {
     [TestClass]
     public class ContainerTests

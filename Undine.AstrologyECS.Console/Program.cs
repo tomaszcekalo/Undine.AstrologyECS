@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Undine.AstrologyECS;
+using UndineAstrologyECS.Class;
 using Undine.Core;
 using Undine.Core.Class;
 

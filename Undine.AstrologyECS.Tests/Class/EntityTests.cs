@@ -1,11 +1,14 @@
-﻿using System;
+﻿using NSubstitute;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Undine.AstrologyECS.Tests.Components;
+using Undine.AstrologyECS.Tests.Class.Components;
+using Undine.Core.Class;
+using UndineAstrologyECS.Class;
 
-namespace Undine.AstrologyECS.Tests
+namespace Undine.AstrologyECS.Tests.Class
 {
     [TestClass]
     public class EntityTests
@@ -19,7 +22,7 @@ namespace Undine.AstrologyECS.Tests
         public void ComponentCanBeAdded()
         {
             var container = new AstrologyContainer();
-            var mock = Substitute.For<AstrologySystem<AComponent>>();
+            var mock = Substitute.For<UnifiedSystem<AComponent>>();
             container.AddSystem(mock);
             container.Init();
             var entity = container.CreateNewEntity();
@@ -33,10 +36,11 @@ namespace Undine.AstrologyECS.Tests
             var mock = Substitute.For<UnifiedSystem<AComponent>>();
             container.AddSystem(mock);
             container.Init();
-            var entity = (DartkEntity)container.CreateNewEntity();
+            var entity = (AstrologyEntity)container.CreateNewEntity();
             entity.AddComponent(new AComponent());
 
             ref var component = ref entity.GetComponent<AComponent>();
             Assert.IsNotNull(component);
         }//
     }
+}
