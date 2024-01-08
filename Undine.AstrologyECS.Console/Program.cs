@@ -1,8 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Undine.AstrologyECS;
-using UndineAstrologyECS.Class;
+using UndineAstrologyECS;
 using Undine.Core;
-using Undine.Core.Class;
 
 Console.WriteLine("Hello, World!");
 var container = new AstrologyContainer();
@@ -45,7 +43,7 @@ public class AccelerationSystem : UnifiedSystem<VelocityComponent, AccelerationC
     }
 }
 
-public class PositionComponent
+public struct PositionComponent
 {
     public float x;
     public float y;
@@ -56,13 +54,13 @@ public class PositionComponent
     }
 }
 
-public class VelocityComponent
+public struct VelocityComponent
 {
     public float x;
     public float y;
 }
 
-public class AccelerationComponent
+public struct AccelerationComponent
 {
     public float x;
     public float y;

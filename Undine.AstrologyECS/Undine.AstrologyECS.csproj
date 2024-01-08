@@ -8,9 +8,22 @@
     <RepositoryUrl>https://github.com/tomaszcekalo/Undine.AstrologyECS</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <Version>1.0.0</Version>
+	  <Version>1.0.1</Version>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class\**" />
+    <Compile Remove="Struct\**" />
+    <EmbeddedResource Remove="Class\**" />
+    <EmbeddedResource Remove="Struct\**" />
+    <None Remove="Class\**" />
+    <None Remove="Struct\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
@@ -21,7 +34,7 @@
 
   <ItemGroup>
     <PackageReference Include="AstrologyECS" Version="1.0.0" />
-    <PackageReference Include="Undine.Core" Version="0.0.1" />
+    <PackageReference Include="Undine.Core" Version="0.0.0.8" />
   </ItemGroup>
 
 </Project>

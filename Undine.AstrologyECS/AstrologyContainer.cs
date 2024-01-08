@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Undine.AstrologyECS.Struct;
 using Undine.Core;
-using Undine.Core.Struct;
 
-namespace UndineAstrologyECS.Struct
+namespace UndineAstrologyECS
 {
     public class AstrologyContainer : EcsContainer
     {

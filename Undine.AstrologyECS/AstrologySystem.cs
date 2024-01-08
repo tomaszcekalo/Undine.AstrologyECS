@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Undine.Core;
-using Undine.Core.Struct;
 
-namespace UndineAstrologyECS.Struct
+namespace UndineAstrologyECS
 {
     public class AstrologySystem<A> : AstrologyECS.System, ISystem
         where A : struct

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Undine.AstrologyECS.Tests.Class.Components
+namespace Undine.AstrologyECS.Tests.Components
 {
-    public class BComponent
+    public struct CComponent
     {
     }
 }
