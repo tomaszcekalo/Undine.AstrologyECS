@@ -10,21 +10,26 @@ namespace UndineAstrologyECS
 {
     public class AstrologyEntity : IUnifiedEntity
     {
-        private Entity _entity;
+        public Entity Entity { get; set; }
 
         public AstrologyEntity(Entity entity)
         {
-            _entity = entity;
+            Entity = entity;
         }
 
         public void AddComponent<A>(in A component) where A : struct
         {
-            _entity.AddComponent(new AstrologyComponentWrapper<A>(component));
+            Entity.AddComponent(new AstrologyComponentWrapper<A>(component));
         }
 
         public ref A GetComponent<A>() where A : struct
         {
-            return ref _entity.GetComponent<AstrologyComponentWrapper<A>>().Component;
+            return ref Entity.GetComponent<AstrologyComponentWrapper<A>>().Component;
+        }
+        public void RemoveComponent<A>() where A : struct
+        {
+            // bool?
+            Entity.RemoveComponentsOfType<AstrologyComponentWrapper<A>>();
         }
     }
 }

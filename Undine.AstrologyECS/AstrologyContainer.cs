@@ -36,6 +36,14 @@ namespace UndineAstrologyECS
             EntityPool.AddEntity(entity);
             return new AstrologyEntity(entity);
         }
+        public override void DeleteEntity(IUnifiedEntity entity)
+        {
+            var entityToRemove = entity as AstrologyEntity;
+            if(entityToRemove != null)
+            {
+                EntityPool.RemoveEntity(entityToRemove.Entity);
+            }
+        }
 
         public override ISystem GetSystem<A>(UnifiedSystem<A> system)
         {

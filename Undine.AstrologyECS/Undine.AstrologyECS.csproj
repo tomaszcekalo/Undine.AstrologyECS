@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/tomaszcekalo/Undine.AstrologyECS</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <Version>1.0.1</Version>
+	  <Version>1.0.2</Version>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -34,7 +34,7 @@
 
   <ItemGroup>
     <PackageReference Include="AstrologyECS" Version="1.0.0" />
-    <PackageReference Include="Undine.Core" Version="0.0.0.8" />
+    <PackageReference Include="Undine.Core" Version="0.0.0.9" />
   </ItemGroup>
 
 </Project>

@@ -25,6 +25,13 @@ namespace Undine.AstrologyECS.Tests
             var entity = container.CreateNewEntity();
             Assert.IsNotNull(entity);
         }
+        [TestMethod]
+        public void EntityCanBeDeleted()
+        {
+            var container = new AstrologyContainer();
+            var entity = container.CreateNewEntity();
+            container.DeleteEntity(entity);
+        }
 
         [TestMethod]
         public void OneTypeSystemCanBeAdded()

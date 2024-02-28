@@ -42,5 +42,17 @@ namespace Undine.AstrologyECS.Tests
             ref var component = ref entity.GetComponent<AComponent>();
             Assert.IsNotNull(component);
         }//
+
+        [TestMethod]
+        public void ComponentCanBeRemoved()
+        {
+            var container = new AstrologyContainer();
+            var mock = Substitute.For<UnifiedSystem<AComponent>>();
+            container.AddSystem(mock);
+            container.Init();
+            var entity = (AstrologyEntity)container.CreateNewEntity();
+            entity.AddComponent(new AComponent());
+            entity.RemoveComponent<AComponent>();
+        }//
     }
 }
