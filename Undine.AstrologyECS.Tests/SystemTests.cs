@@ -87,17 +87,12 @@ namespace Undine.AstrologyECS.Tests
                 ref Arg.Any<DComponent>()
                 );
         }
-        public void AddDummySystem(EcsContainer container)
-        {
-            container.AddSystem(Substitute.For<UnifiedSystem<DComponent>>());
-        }
         [TestMethod]
         public void OneTypeSystem_FromGet_GetsProcessed()
         {
             var mock = Substitute.For<UnifiedSystem<AComponent>>();
             var container = new AstrologyContainer();
             var system = container.GetSystem(mock);
-            AddDummySystem(container);
             container.Init();
             var entity = container.CreateNewEntity();
             entity.AddComponent(new AComponent());
@@ -113,7 +108,6 @@ namespace Undine.AstrologyECS.Tests
             var mock = Substitute.For<UnifiedSystem<AComponent, BComponent>>();
             var container = new AstrologyContainer();
             var system = container.GetSystem(mock);
-            AddDummySystem(container);
             container.Init();
             var entity = container.CreateNewEntity();
             entity.AddComponent(new AComponent());
@@ -131,7 +125,6 @@ namespace Undine.AstrologyECS.Tests
             var mock = Substitute.For<UnifiedSystem<AComponent, BComponent, CComponent>>();
             var container = new AstrologyContainer();
             var system = container.GetSystem(mock);
-            AddDummySystem(container);
             container.Init();
             var entity = container.CreateNewEntity();
             entity.AddComponent(new AComponent());
@@ -151,7 +144,6 @@ namespace Undine.AstrologyECS.Tests
             var mock = Substitute.For<UnifiedSystem<AComponent, BComponent, CComponent, DComponent>>();
             var container = new AstrologyContainer();
             var system = container.GetSystem(mock);
-            AddDummySystem(container);
             container.Init();
             var entity = container.CreateNewEntity();
             entity.AddComponent(new AComponent());

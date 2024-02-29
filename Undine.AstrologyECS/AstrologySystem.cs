@@ -23,7 +23,15 @@ namespace UndineAstrologyECS
 
         public void ProcessAll()
         {
-            throw new NotImplementedException();
+            var entites = EntityPool.GetEntities();
+            foreach (var entity in entites)
+            {
+                if (entity.HasComponent<AstrologyComponentWrapper<A>>())
+                {
+                    System.ProcessSingleEntity(entity.GetHashCode(),
+                        ref entity.GetComponent<AstrologyComponentWrapper<A>>().Component);
+                }
+            }
         }
 
         protected override void OperateOnEntity(Entity entity)
@@ -50,7 +58,17 @@ namespace UndineAstrologyECS
 
         public void ProcessAll()
         {
-            throw new NotImplementedException();
+            var entites = EntityPool.GetEntities();
+            foreach (var entity in entites)
+            {
+                if (entity.HasComponent<AstrologyComponentWrapper<A>>()
+                && entity.HasComponent<AstrologyComponentWrapper<B>>())
+                {
+                    System.ProcessSingleEntity(entity.GetHashCode(),
+                        ref entity.GetComponent<AstrologyComponentWrapper<A>>().Component,
+                        ref entity.GetComponent<AstrologyComponentWrapper<B>>().Component);
+                }
+            }
         }
 
         protected override void OperateOnEntity(Entity entity)
@@ -80,7 +98,19 @@ namespace UndineAstrologyECS
 
         public void ProcessAll()
         {
-            throw new NotImplementedException();
+            var entites = EntityPool.GetEntities();
+            foreach (var entity in entites)
+            {
+                if(entity.HasComponent<AstrologyComponentWrapper<A>>()
+                    && entity.HasComponent<AstrologyComponentWrapper<B>>()
+                    && entity.HasComponent<AstrologyComponentWrapper<C>>())
+                {
+                    System.ProcessSingleEntity(entity.GetHashCode(),
+                        ref entity.GetComponent<AstrologyComponentWrapper<A>>().Component,
+                        ref entity.GetComponent<AstrologyComponentWrapper<B>>().Component,
+                        ref entity.GetComponent<AstrologyComponentWrapper<C>>().Component);
+                }
+            }
         }
 
         protected override void OperateOnEntity(Entity entity)
@@ -113,7 +143,21 @@ namespace UndineAstrologyECS
 
         public void ProcessAll()
         {
-            throw new NotImplementedException();
+            var entites = EntityPool.GetEntities();
+            foreach (var entity in entites)
+            {
+                if (entity.HasComponent<AstrologyComponentWrapper<A>>()
+                    && entity.HasComponent<AstrologyComponentWrapper<B>>()
+                    && entity.HasComponent<AstrologyComponentWrapper<C>>()
+                    && entity.HasComponent<AstrologyComponentWrapper<D>>())
+                {
+                    System.ProcessSingleEntity(entity.GetHashCode(),
+                        ref entity.GetComponent<AstrologyComponentWrapper<A>>().Component,
+                        ref entity.GetComponent<AstrologyComponentWrapper<B>>().Component,
+                        ref entity.GetComponent<AstrologyComponentWrapper<C>>().Component,
+                        ref entity.GetComponent<AstrologyComponentWrapper<D>>().Component);
+                }
+            }
         }
 
         protected override void OperateOnEntity(Entity entity)
